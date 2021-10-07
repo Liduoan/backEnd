@@ -7,7 +7,7 @@ import lombok.Data;
  * @date 2021年10月02日 23:19
  */
 @Data
-public class BaseException extends RuntimeException{
+public class BaseException extends RuntimeException {
 
     private Integer code;
 

@@ -51,7 +51,7 @@ public class JwtUtil {
         BackResult<Claims> checkResult = new BackResult<>();
         try {
             Claims claims = parseJWT(jwtStr);
-            checkResult.setResult(ResultCode.SUCCESS,claims);
+            checkResult.setResult(ResultCode.SUCCESS, claims);
         } catch (ExpiredJwtException e) {
             checkResult.setResult(ResultCode.JWT_ERRCODE_EXPIRE);
         } catch (Exception e) {

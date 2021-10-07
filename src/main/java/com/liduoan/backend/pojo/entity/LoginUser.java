@@ -9,9 +9,9 @@ import lombok.Data;
  */
 @TableName("admin")
 @Data
-public class LoginUser extends BaseEntity{
+public class LoginUser extends BaseEntity {
 
-    private String userName;
+    private String username;
 
     private String password;
 

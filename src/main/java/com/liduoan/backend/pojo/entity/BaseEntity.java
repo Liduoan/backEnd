@@ -32,28 +32,25 @@ public class BaseEntity implements Serializable {
     @TableId(type = IdType.AUTO)
     @ApiModelProperty(hidden = true)
 //    @Id //用于ES的Id
-    private Long id;
+            Long id;
 
     /**
      * 创建时间
-     * */
-    @JsonFormat(shape=JsonFormat.Shape.STRING,pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
+     */
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     @TableField(fill = FieldFill.INSERT)
     @ApiModelProperty(hidden = true)
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date createdTime;
+    Date createdTime;
 
-
-//    private String createdUser;
 
     /**
      * 更新时间
-     * */
-    @JsonFormat(shape=JsonFormat.Shape.STRING,pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
+     */
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     @TableField(fill = FieldFill.INSERT)
     @ApiModelProperty(hidden = true)
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date updatedTime;
+    Date updatedTime;
 
-//    private String updatedUser;
 }
