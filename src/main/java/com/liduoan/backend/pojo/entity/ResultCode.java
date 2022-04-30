@@ -13,11 +13,12 @@ public enum ResultCode {
     UNAUTHORIZED(401, "认证失败"),//未认证
     NOT_FOUND(404, "接口不存在"),//接口不存在
     INTERNAL_SERVER_ERROR(500, "系统繁忙"),//服务器内部错误
-    METHOD_NOT_ALLOWED(405,"方法不被允许"),
-
+    METHOD_NOT_ALLOWED(405, "方法不被允许"),
+    LOGIN_FAIL(444, "登录失败"),
+    FAIL(402, "操作失败"),
     //认证的返回码
-    JWT_ERRCODE_EXPIRE(4003,"认证已过期"),
-    JWT_ERRCODE_FAIL(4004,"认证失败"),
+    JWT_ERRCODE_EXPIRE(4003, "认证已过期"),
+    JWT_ERRCODE_FAIL(4004, "认证失败"),
     /*参数错误:1001-1999*/
     PARAMS_IS_INVALID(1001, "参数无效"),
     PARAMS_IS_BLANK(1002, "参数为空");

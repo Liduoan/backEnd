@@ -9,6 +9,6 @@ import org.apache.ibatis.annotations.Mapper;
  * @date 2021年10月02日 18:16
  */
 @Mapper
-public interface LoginDao extends BaseMapper<LoginUser> {
+public interface LoginMapper extends BaseMapper<LoginUser> {
 
 }

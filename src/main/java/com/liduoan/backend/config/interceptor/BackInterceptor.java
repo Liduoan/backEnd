@@ -9,6 +9,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
 
+import javax.servlet.ServletRequest;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,7 +21,7 @@ import java.nio.charset.StandardCharsets;
  */
 @Slf4j
 @Component
-public class MyInterceptor implements HandlerInterceptor {
+public class BackInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -48,7 +49,7 @@ public class MyInterceptor implements HandlerInterceptor {
         if (checkResult.getCode().equals(200)) {
             // 验证通过
             return true;
-        }else {
+        } else {
             throw new AuthorizedException("Token认证失败");
         }
     }

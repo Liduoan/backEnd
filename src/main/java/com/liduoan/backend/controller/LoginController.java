@@ -7,6 +7,7 @@ import com.liduoan.backend.util.JwtUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,28 +27,25 @@ public class LoginController {
     private LoginService loginService;
 
     @PostMapping("/check")
-    public BackResult login(LoginUser user) {
+    public BackResult login(@RequestBody LoginUser user) {
         //查看该用户是否登录成功
-        Boolean flag = loginService.checkUser(user);
+        loginService.checkUser(user);
         String token = null;
         try {
-            if(flag){
-                token = JwtUtil.createJWT(String.valueOf(new Date()),user.getUserName(),3600000L);
-            }
-        }catch (IOException e) {
-            log.error("token 获取异常:{}",e.getMessage());
+            token = JwtUtil.createJWT(String.valueOf(new Date()), user.getUsername(), 360000000000L);
+        } catch (IOException e) {
+            log.error("token 获取异常:{}", e.getMessage());
         }
         return BackResult.success(token);
     }
 
 
     @PostMapping("/register")
-    public BackResult register(LoginUser user){
+    public BackResult register(@RequestBody LoginUser user) {
         //注册该用户 要求这个用户的用户名唯一
         Boolean register = loginService.register(user);
         return BackResult.success(register);
     }
-
 
 
 }
