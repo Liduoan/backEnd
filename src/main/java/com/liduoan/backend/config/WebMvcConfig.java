@@ -1,7 +1,7 @@
 package com.liduoan.backend.config;
 
 import com.liduoan.backend.config.header.CustomFilter;
-import com.liduoan.backend.config.interceptor.MyInterceptor;
+import com.liduoan.backend.config.interceptor.BackInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -20,11 +20,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebMvcConfig implements WebMvcConfigurer {
 
     @Autowired
-    MyInterceptor myInterceptor;
+    BackInterceptor backInterceptor;
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(myInterceptor).addPathPatterns("/user/**", "/item/**");
+        registry.addInterceptor(backInterceptor).addPathPatterns("/user/**", "/item/**");
     }
 
     static final String ORIGINS[] = new String[]{"GET", "POST", "PUT", "DELETE"};

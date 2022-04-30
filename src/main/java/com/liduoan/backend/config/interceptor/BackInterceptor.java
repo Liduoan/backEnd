@@ -21,7 +21,7 @@ import java.nio.charset.StandardCharsets;
  */
 @Slf4j
 @Component
-public class MyInterceptor implements HandlerInterceptor {
+public class BackInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {

@@ -45,20 +45,11 @@ public class RecodeController {
 
     @PostMapping("/save")
     public BackResult<Recode> save(@RequestBody Recode recode) {
-        Long itemPrices = Long.valueOf(recode.getItemPrice());
-        Guest guest = guestService.getById(recode.getGuestId());
-        Long curPrice = guest.getPrices() - itemPrices;
-        //金额判断
-        Assert.isTrue(curPrice > 0, "金额不足");
-        guest.setPrices(curPrice);
-        //更新用户信息
-        guestService.updateUser(guest);
-        //添加记录信息
-//        recode.setUsername(userId);
         recodeService.save(recode);
         //添加完成记录返回成功
         return BackResult.success(recode);
     }
+
 
 
 }

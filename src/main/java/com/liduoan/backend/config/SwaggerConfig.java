@@ -20,7 +20,6 @@ import java.util.ArrayList;
  */
 @Configuration
 @EnableSwagger2
-//@Profile({"dev","test"})
 public class SwaggerConfig {
 
     //配置Swagger的Bean实例
@@ -38,7 +37,7 @@ public class SwaggerConfig {
 
     //配置Swagger 信息=apiInfo
     private ApiInfo apiInfo() {
-        Contact contact = new Contact("liduoan", "http://www.lemonfishzc.life", "873310466@qq.com");
+        Contact contact = new Contact("liduoan", "http://liduoan.github.io", "1093762409@qq.com");
         return new ApiInfo("liduoan的API",
                 "天若星河，喜乐康平",
                 "1.0",

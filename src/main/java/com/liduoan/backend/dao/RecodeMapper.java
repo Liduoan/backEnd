@@ -2,6 +2,7 @@ package com.liduoan.backend.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.liduoan.backend.pojo.entity.Recode;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
